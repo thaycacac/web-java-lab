@@ -1,0 +1,62 @@
+
+LAB 321 AssignmentType:Long AssignmentCode:J3.L.P0001LOC:200Slot(s):8
+Title: Online Quiz
+	
+Background
+
+You often see and use the online test or quiz, it can be found easily on internet, training center, academy or even a school. In this assignment, you will learn how to build an online quiz system, particular system including the module for administrator (manager) uses to import/manage the question bank and user information, other module for taken test.
+ 
+Program Specifications
+
+Program an online quiz, detail functions of this website is described below
+
+Features:
+This website contains 5 main functions, we have two kind of users: Teacher and normal user.
+As the teacher you are allowed to use all functions of system, for Manage Quiz – you only can see your created questions only.
+As the Student you are allowed to use function 1, 2 and 5 only.
+- Function 1 : Home page : ( see figure 01)
+o There for menu on navigation bar: Home (current page), Take Quiz, Make Quiz, Manage Quiz and Contact
+o To be able to use the function of each menu, users are required to login the system first. If you wish to have an account, you can make a new one by click on hyperlink Register
+- Function 2 : Take Quiz page ( see PIC 02) 
+o Select the number of questions and start the quiz
+o Assume that the time allowance for a question is 01 (one) minute
+o Calculate and print the score for taker
+- Function 3: Make Quiz ( see PIC 03)
+o Enter information of a Quiz and save it to your database
+- Function 4: Manage Quiz  ( see PIC 04)
+o Display information of all questions
+- Function 5: Register a new user  ( see PIC 05)
+o Register a new user
+o A new user and be a teacher or normal user
+
+Note: All data must be load from database, not hard code.
+
+Expectation of User interface:
+
+Pic 01: Home Page ( TOP)
+
+
+PIC 02: Take Quiz Page
+
+
+
+
+
+
+Pic 03: Make quiz page
+
+
+
+
+PIC 4: Manage Quiz Page
+
+PIC 05: Register Page
+
+
+
+Guidelines
+* Step 1 : Create prototype 
+* Step 2 : Design database base on created prototype
+* Step 3 : Code & Test
+ 
+
