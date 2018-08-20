@@ -17,32 +17,32 @@
             <nav>
                 <ul class="my-nav">
                     <li>
-                        <a href="">Home</a>
+                        <a href="login.jsp">Home</a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="login.jsp">
                             Take Quiz</a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="login.jsp">
                             Make Quiz</a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="login.jsp">
                             Manage Quiz</a>
                     </li>
                 </ul>
             </nav>
             <div class="content">
                 <p class="title-regist">Login Form</p>
-                <form action="">
+                <form action="LoginServlet" method="POST">
                     <div class="table">
                         <div class="table-row">
                             <div class="table-cell">
                                 <p class="cell-attribute">User Name:</p>
                             </div>
                             <div class="table-cell">
-                                <input type="text" class="input" name="username">
+                                <input type="text" class="input" name="username" value="${username}">
                             </div>
                         </div>
                         <div class="table-row">
@@ -50,7 +50,7 @@
                                 <p class="cell-attribute">Password:</p>
                             </div>
                             <div class="table-cell">
-                                <input type="text" class="input" name="password">
+                                <input type="password" class="input" name="password">
                             </div>
                         </div>
                         <div class="table-row">
@@ -58,7 +58,7 @@
                             </div>
                             <div class="table-cell">
                                 <input type="submit" value="Sign in">
-                                <a href="" class="link-register">Register</a>
+                                <a href="register.jsp" class="link-register">Register</a>
                             </div>
                         </div>
                     </div>

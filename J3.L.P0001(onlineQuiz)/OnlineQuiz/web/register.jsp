@@ -17,7 +17,7 @@
             <nav>
                 <ul class="my-nav">
                     <li>
-                        <a href="">Home</a>
+                        <a href="/login.jsp">Home</a>
                     </li>
                     <li>
                         <a href="">
@@ -35,7 +35,7 @@
             </nav>
             <div class="content">
                 <p class="title-regist">Registration Form</p>
-                <form action="">
+                <form action="RegisterServlet" method="POST">
                     <div class="table">
                         <div class="table-row">
                             <div class="table-cell">
@@ -58,7 +58,10 @@
                                 <p class="cell-attribute">User Type:</p>
                             </div>
                             <div class="table-cell">
-                                <input type="text" class="input" name="username">
+                                <select name="type">
+                                    <option value="0">Teacher</option>
+                                    <option value="1">Student</option>
+                                </select>
                             </div>
                         </div>
                         <div class="table-row">
