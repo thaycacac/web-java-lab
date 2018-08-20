@@ -28,7 +28,7 @@
                             Make Quiz</a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="listquestion.jsp">
                             Manage Quiz</a>
                     </li>
                     <li>

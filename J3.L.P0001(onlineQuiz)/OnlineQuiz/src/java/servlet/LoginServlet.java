@@ -29,9 +29,8 @@ public class LoginServlet extends HttpServlet {
         String checkPassword = userDao.getPassword(username);
         String nameUser = userDao.getName(username);
         if (password.equals(checkPassword)) {
+            request.getSession().setAttribute("nameUser", nameUser);
             request.getRequestDispatcher("wellcome.jsp").forward(request, response);
-            ServletContext application = getServletConfig().getServletContext();
-            application.setAttribute("nameUser", nameUser);
         } else {
             PrintWriter out = response.getWriter();
             out.println("<h1>login unsuccessful </h1>");

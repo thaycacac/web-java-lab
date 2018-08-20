@@ -17,7 +17,7 @@
             <nav>
                 <ul class="my-nav">
                     <li>
-                        <a href="">Home</a>
+                        <a href="wellcome.jsp">Home</a>
                     </li>
                     <li>
                         <a href="">
@@ -39,7 +39,7 @@
             </nav>
             <div class="content">
                 <p class="title-wellcome">Wellcome
-                    <span class="name">HangNTT</span>
+                    <span class="name">${nameUser}</span>
                 </p>
                 <p class="time">Time remaining: <span>10:03</span></p>
                 <p class="text-content">The name of capital of VietNam after year of 1997?</p>

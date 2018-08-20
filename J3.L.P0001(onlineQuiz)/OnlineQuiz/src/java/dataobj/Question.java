@@ -9,26 +9,24 @@ import java.util.ArrayList;
  */
 public class Question {
 
-    private String id;
+    private int id;
     private String question;
     private Date created;
-    private ArrayList<Answer> listAnswer;
 
     public Question() {
     }
 
-    public Question(String id, String question, Date created, ArrayList<Answer> listAnswer) {
+    public Question(int id, String question, Date created) {
         this.id = id;
         this.question = question;
         this.created = created;
-        this.listAnswer = listAnswer;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -46,14 +44,6 @@ public class Question {
 
     public void setCreated(Date created) {
         this.created = created;
-    }
-
-    public ArrayList<Answer> getListAnswer() {
-        return listAnswer;
-    }
-
-    public void setListAnswer(ArrayList<Answer> listAnswer) {
-        this.listAnswer = listAnswer;
     }
 
 }
