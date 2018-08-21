@@ -1,5 +1,6 @@
 package dal;
 
+import dataobj.Answer;
 import dataobj.Question;
 import db.DBContext;
 import java.sql.Connection;
@@ -53,5 +54,45 @@ public class QuestionDAO {
             ex.printStackTrace();
         }
         return listQuestion;
+    }
+
+    public ArrayList<Answer> listAnswer(int idQuestion) {
+        ArrayList<Answer> listAnswer = new ArrayList<>();
+        Connection con = null;
+        DBContext db = new DBContext();
+        try {
+            con = db.getConnection();
+            String sql = "select answer, correct from answer where questionid = '" + idQuestion + "'";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                String answer = rs.getString(1);
+                boolean correct = ((rs.getInt(2) == 0) ? false : true);
+                Answer newAnswer = new Answer(answer, correct);
+                listAnswer.add(newAnswer);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return listAnswer;
+    }
+
+    public String getQuestionById(int idQuestion) {
+        String question = null;
+        Connection con = null;
+        DBContext db = new DBContext();
+        try {
+            con = db.getConnection();
+            String sql = "select question from question where questionid = '" + idQuestion + "'";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                question = rs.getString(1);
+            }
+            return question;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
     }
 }

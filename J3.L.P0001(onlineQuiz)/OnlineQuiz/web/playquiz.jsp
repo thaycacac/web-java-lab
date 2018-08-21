@@ -4,6 +4,12 @@
     Author     : Thaycacac
 --%>
 
+<%@page import="java.util.Random"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="dal.QuestionDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dataobj.Answer"%>
+<%@page import="dataobj.Answer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,15 +26,15 @@
                         <a href="wellcome.jsp">Home</a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="playquiz.jsp">
                             Take Quiz</a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="wellcome.jsp">
                             Make Quiz</a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="wellcome.jsp">
                             Manage Quiz</a>
                     </li>
                     <li>
@@ -42,12 +48,27 @@
                     <span class="name">${nameUser}</span>
                 </p>
                 <p class="time">Time remaining: <span>10:03</span></p>
-                <p class="text-content">The name of capital of VietNam after year of 1997?</p>
+                <%!
+                    String question;
+                    ArrayList<Answer> listAnswer;
+                    int countAnswer;
+                    String username;
+                %>
+                <%
+                    QuestionDAO questionDao = new QuestionDAO();
+                    username = (String) request.getSession().getAttribute("nameUser");
+                    countAnswer = questionDao.countQuesion(username);
+                    Random ran = new Random();
+                    int randomQuestion = ran.nextInt(2) + 1;
+                    question = questionDao.getQuestionById(randomQuestion);
+                    listAnswer = questionDao.listAnswer(randomQuestion);
+                %>
+                <p class="text-content"><%= question%></p>
                 <form action="">
-                    <input type="checkbox" class="checkbox-content" name="answer"><span class="value-check-box">Sai Gon </span><br>
-                    <input type="checkbox" class="checkbox-content" name="answer"><span class="value-check-box">Ho Chi Minh</span> <br>
-                    <input type="checkbox" class="checkbox-content" name="answer"><span class="value-check-box">Ha Noi</span> <br>
-                    <input type="checkbox" class="checkbox-content" name="answer"><span class="value-check-box">Ha Tay </span><br>
+                    <c:forEach var="answer" items="<%= listAnswer%>">
+                        <input type="checkbox" class="checkbox-content" name="answer">
+                        <span class="value-check-box">${answer.answer} </span><br>
+                    </c:forEach>
                     <input type="submit" value="Next" class="submit-content">
                 </form>
             </div>
