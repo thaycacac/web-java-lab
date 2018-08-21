@@ -12,6 +12,14 @@
         <servlet-name>ListQuestionServlet</servlet-name>
         <servlet-class>servlet.ListQuestionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TakeQuizServlet</servlet-name>
+        <servlet-class>servlet.TakeQuizServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckResultServlet</servlet-name>
+        <servlet-class>servlet.CheckResultServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>ListQuestionServlet</servlet-name>
         <url-pattern>/ListQuestionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TakeQuizServlet</servlet-name>
+        <url-pattern>/TakeQuizServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckResultServlet</servlet-name>
+        <url-pattern>/CheckResultServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

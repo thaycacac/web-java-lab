@@ -64,9 +64,10 @@
                     listAnswer = questionDao.listAnswer(randomQuestion);
                 %>
                 <p class="text-content"><%= question%></p>
-                <form action="">
+                <form action="CheckResultServlet" method="POST">
                     <c:forEach var="answer" items="<%= listAnswer%>">
-                        <input type="checkbox" class="checkbox-content" name="answer">
+                        <input type="checkbox" class="checkbox-content" name="answer" value="${answer.answer}">
+                        <input type="hidden" name="questionid" value="<%= randomQuestion %>">
                         <span class="value-check-box">${answer.answer} </span><br>
                     </c:forEach>
                     <input type="submit" value="Next" class="submit-content">

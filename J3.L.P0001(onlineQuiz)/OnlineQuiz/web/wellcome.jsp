@@ -20,7 +20,7 @@
                         <a href="wellcome.jsp">Home</a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="playquia.jsp">
                             Take Quiz</a>
                     </li>
                     <li>
@@ -43,7 +43,7 @@
                     <span class="name">${nameUser}</span>
                 </p>
                 <p class="text-content">Enter number of question:</p>
-                <form action="">
+                <form action="TakeQuizServlet" method="POST">
                     <input type="text" class="input-content" name="numberQuestion">
                     <br>
                     <input type="submit" value="Start" class="submit-content">

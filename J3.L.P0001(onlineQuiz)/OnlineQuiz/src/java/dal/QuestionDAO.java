@@ -9,6 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -94,5 +96,16 @@ public class QuestionDAO {
             ex.printStackTrace();
         }
         return null;
+    }
+
+    public String getCorrectAnswer(int questionid) {
+        Connection con = null;
+        DBContext db = new DBContext();
+        try {
+            con = db.getConnection();
+            //NOT DONE
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 }
