@@ -67,11 +67,12 @@
                 <form action="CheckResultServlet" method="POST">
                     <c:forEach var="answer" items="<%= listAnswer%>">
                         <input type="checkbox" class="checkbox-content" name="answer" value="${answer.answer}">
-                        <input type="hidden" name="questionid" value="<%= randomQuestion %>">
                         <span class="value-check-box">${answer.answer} </span><br>
                     </c:forEach>
+                        <input type="hidden" name="questionid" value="<%= randomQuestion %>">
                     <input type="submit" value="Next" class="submit-content">
                 </form>
+                <p>${result}</p>
             </div>
         </div>
     </body>

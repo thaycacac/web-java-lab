@@ -103,9 +103,16 @@ public class QuestionDAO {
         DBContext db = new DBContext();
         try {
             con = db.getConnection();
-            //NOT DONE
+            String sql = "select answer from Answer where questionid = '" + questionid + "' and correct = '1'";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                String answerCorrect = rs.getString(1);
+                return answerCorrect;
+            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        return null;
     }
 }

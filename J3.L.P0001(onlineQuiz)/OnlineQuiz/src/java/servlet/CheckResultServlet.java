@@ -1,5 +1,6 @@
 package servlet;
 
+import dal.QuestionDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,8 +17,17 @@ public class CheckResultServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String check = request.getParameter("answer");
-        int questionid = Integer.parseInt(request.getParameter("quesionid"));
-        
+        int questionid = Integer.parseInt(request.getParameter("questionid"));
+        QuestionDAO questionDAO = new QuestionDAO();
+        String answerCorrect = questionDAO.getCorrectAnswer(questionid);
+        int anwerCorrectCurrent = Integer.parseInt((String) getServletContext().getAttribute("answerCorrect"));
+        int numberQuestion = Integer.parseInt((String) getServletContext().getAttribute("numberQuestion"));
+        System.out.println(numberQuestion);
+        if (check.equals(answerCorrect)) {
+            anwerCorrectCurrent += 1;
+            getServletContext().setAttribute("result", anwerCorrectCurrent / numberQuestion * 100);
+            response.sendRedirect("playquiz.jsp");
+        }
     }
 
     @Override
