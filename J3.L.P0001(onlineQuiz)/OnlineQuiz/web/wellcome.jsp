@@ -20,7 +20,7 @@
                         <a href="wellcome.jsp">Home</a>
                     </li>
                     <li>
-                        <a href="playquia.jsp">
+                        <a href="playquiz.jsp">
                             Take Quiz</a>
                     </li>
                     <li>

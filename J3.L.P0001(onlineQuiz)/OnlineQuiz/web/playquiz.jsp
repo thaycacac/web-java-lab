@@ -72,7 +72,6 @@
                         <input type="hidden" name="questionid" value="<%= randomQuestion %>">
                     <input type="submit" value="Next" class="submit-content">
                 </form>
-                <p>${result}</p>
             </div>
         </div>
     </body>

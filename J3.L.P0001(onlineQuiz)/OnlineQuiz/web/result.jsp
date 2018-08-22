@@ -17,18 +17,18 @@
         <nav>
             <ul class="my-nav">
                 <li>
-                    <a href="">Home</a>
+                    <a href="wellcome.jsp">Home</a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="wellcome.jsp">
                         Take Quiz</a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="wellcome.jsp">
                         Make Quiz</a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="wellcome.jsp">
                         Manage Quiz</a>
                 </li>
                 <li>
@@ -39,7 +39,7 @@
         </nav>
         <div class="content">
             <p class="title-wellcome">Your score
-                <span class="name">7.5 (75%) - Passed</span>
+                <span class="name">${result/10} (${result}%) - ${result <= 50.0 ? "Not Pass" : "Passed"}</span>
             </p>
             <p class="text-content">Take another test
                 <a href="">

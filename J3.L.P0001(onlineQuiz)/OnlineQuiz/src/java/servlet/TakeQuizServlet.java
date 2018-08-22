@@ -16,8 +16,9 @@ public class TakeQuizServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String numberQuestion = request.getParameter("numberQuestion");
-        getServletContext().setAttribute("answerCorrect", "0");
-        getServletContext().setAttribute("numberQuestion", numberQuestion);
+        getServletContext().setAttribute("answerCorrect", 0);
+        getServletContext().setAttribute("numberQuestion", Integer.parseInt(numberQuestion));
+        getServletContext().setAttribute("numberAnswer", 0);
         response.sendRedirect("playquiz.jsp");
         
     }
